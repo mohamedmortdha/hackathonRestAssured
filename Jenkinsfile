@@ -2,15 +2,10 @@
 pipeline {
   agent none
   stages {
-    stage ('Invoke_pipeline') {
-            steps {
-                build job: 'Deployer-pipe'
-            }
-      }
     stage('Maven Install') {
       agent {
         docker {
-          image 'adoptopenjdk/maven-openjdk11:latest'
+          image 'maven:3.8.1-adoptopenjdk-11'
         }
       }
       steps {
