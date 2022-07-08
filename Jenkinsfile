@@ -9,7 +9,7 @@ pipeline {
         }
       }
       steps {
-        sh 'mvn clean test -Pqa5-Apis'
+        sh 'mvn clean install test -Pqa5-Apis'
       }
     }
   }
