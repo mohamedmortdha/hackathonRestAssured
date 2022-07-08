@@ -18,5 +18,17 @@ pipeline {
         sh 'mvn clean install test -Pqa5-Apis'
       }
     }
+    stage ('publish report') {
+            steps {
+                publishHTML (target: [
+      allowMissing: false,
+      alwaysLinkToLastBuild: false,
+      keepAll: true,
+      reportDir: 'target',
+      reportFiles: 'cucumber-reports.html',
+      reportName: "Cucumber Report"
+    ])
+            }
+      }
   }
 }
