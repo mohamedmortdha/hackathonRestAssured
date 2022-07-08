@@ -29,7 +29,7 @@ public class StepsDefinition {
 
     @Given("I set base url {string}")
     public void iSetBaseUrl(String endPoint) {
-        RestAssured.baseURI = "http://127.0.0.1:9090" + endPoint;
+        RestAssured.baseURI = "http://0.0.0.0:9090" + endPoint;
         request = RestAssured.given();
         request.header("Content-Type", "application/json");
     }
