@@ -36,7 +36,7 @@ public class StepsDefinition {
 
     @And("I set product name {string} and price {string}")
     public void iSetProductNameAndPrice(String name, String price) {
-        jobParams.put("name", name);
+        jobParams.put("name", name+runDate);
         jobParams.put("price", Integer.parseInt(price));
         System.out.println(jobParams.toJSONString());
     }
