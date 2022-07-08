@@ -2,11 +2,6 @@
 pipeline {
   agent none
   stages {
-    stage ('Invoke_pipeline') {
-            steps {
-                build job: 'Deployer-pipe'
-            }
-      }
     stage('Maven Install') {
       agent {
         docker {
